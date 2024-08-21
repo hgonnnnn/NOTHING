@@ -7,6 +7,7 @@
     <title>NOTHING리뉴얼</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
 
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script src="lib/jquery-ui.min.js"></script>
@@ -18,12 +19,14 @@
             var swiper = new Swiper(".main", {
                 spaceBetween: 30,
                 centeredSlides: true,
+                loop: true,
                 autoplay: {
                     delay: 3500,
                     disableOnInteraction: false,
                 },
                 pagination: {
                     el: ".swiper-pagination",
+                    type: "progressbar",
                     clickable: true,
                 },
                 navigation: {
@@ -49,13 +52,16 @@
             $('.buy').mouseenter(function(){
                 $(this).css({
                     'color' : '#fff',
-                    'backgroundColor' : '#e4242a'
+                    'backgroundColor' : '#e4242a',
+                    'transition' : '0.4s',
+                    'transform' : 'scale(0.94)'
                 });
             });
             $('.buy').mouseleave(function(){
                 $(this).css({
                     'color' : '',
-                    'backgroundColor' : ''
+                    'backgroundColor' : '',
+                    'transform' : 'scale(1)'
                 });
             });
 
@@ -79,7 +85,7 @@
                 }
             });
 
-            // 스크롤 시 콘텐츠 나타내기 수정
+            // 스크롤 시 콘텐츠 나타내기
             window.addEventListener('scroll', function () {
                 let section02 = document.querySelector('.section02')
                 let section03 = document.querySelector('#section03')
@@ -88,38 +94,46 @@
                 let section06 = document.querySelector('.section06')
                 let scrollBar = window.scrollY;
                 const Height = window.pageYOffset;
+                
+                /* width값 1024보다 크거나 같을 때 적용됨. */
               if($(window).width() >= 1024) {
+                /* section02 */
                 if(1000 < scrollY) {
                     section02.classList.add('scroll_on');
                     // alert()
                 } else {
                     section02.classList.remove('scroll_on');
                 }
+                /* section03 */
                 if(1750 < scrollY) {
                     section03.classList.add('scroll_on');
                 } else {
                     section03.classList.remove('scroll_on');
                 }
+                /* section04 */
                 if (2500 < scrollY) {
                     section04.classList.add('scroll_on');
                 } else {
                     section04.classList.remove('scroll_on');
 
                 }
+                /* section05 */
                 if (3200 < scrollY) {
                     section05.classList.add('scroll_on');
                 } else {
                     section05.classList.remove('scroll_on');
 
                 }
-                if (3900 < scrollY) {
+                /* section06 */
+                if (3900 <scrollY) {
                     section06.classList.add('scroll_on')
                 } else {
                     section06.classList.remove('scroll_on');
 
                 }
-                console.log(scrollBar);
+                console.log(scrollBar); // 하단에 배치 해야함
                 }
+                /* 1024보다 작을 때 클래스명 add하여 초기화 설정. */
                 if($(window).width() < 1024) {
                     section02.classList.add('scroll_on');
                     section03.classList.add('scroll_on');
@@ -129,19 +143,7 @@
     
                 }
             });
-
-            colsole.log(scrollBar)
-            // window.addEventListener('scroll', () => {
-            //     let scrollBar = window.scrollY;
-            //     console.log(scrollBar);
-
-            //     if(scrollBar > 1072) {
-            //         section01.style.opacity = 100 - (scrollBar / 100) + '%';
-            //     } else {
-            //         section01.style.opacity = 100 + '%';
-
-            //     }
-            // });
+            colsole.log(scrollBar); // 하단에 배치 해야함
         
             }); //script end
     </script>
@@ -151,9 +153,7 @@
     <button class="up_btn">
         <img src="img/icon/up.png" alt="맨위로 이동">
     </button>
-    <header id="header">
-
-    </header><!-- #header -->
+    <header id="header"></header><!-- #header -->
     <div class="main_visual">
         <!-- Swiper -->
         <div class="swiper main">

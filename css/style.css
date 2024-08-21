@@ -59,7 +59,14 @@ body {
 body.on {
     overflow: hidden; /* 스크롤 막기 */
 }
+.bg span {
+    position: relative;
+    left: -9999999999999999px;
+}
 .mobile_main {
+    display: none;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after,.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
     display: none;
 }
 .up_btn {
@@ -74,6 +81,8 @@ body.on {
     cursor: pointer;
     background-color: #fff;
     border-radius: 50%;
+
+    display: none;
 }
 .up_btn img {
     width: 100%;
@@ -104,17 +113,27 @@ video {
     object-fit: cover;
     display: block;
 }
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    background-color: #e4242a;
+/* .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    background-color: #e4242;
+} */
+/* .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    bottom: 0 !important;
+} */
+.swiper-pagination-progressbar-fill {
+    background-color: #e4242a !important;
 }
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+/* .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
     color: #e4242a;
 }
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
     color: #e4242a;
 
+} */
+.section02 .inner .text button:hover,.section03 .inner .text .more:hover, .section04 .inner .text .more:hover,
+.section05 .inner .text .more:hover, .section06 .inner .text .more:hover
+ {
+    transform: scale(0.94);
 }
-
 .s1 {
    position: relative; 
 }
@@ -197,7 +216,7 @@ video {
     transition: 0.3s;
 }
 .section01 .inner .item:hover > img {
-    transform: scale(1.05);
+    transform: scale(1.02);
     
 }
 .section01 .inner .item .text {
@@ -231,6 +250,7 @@ video {
 .section01 .inner .item .text a {
     display: flex;
     column-gap: 15px;
+    transition: 0.2s;
 }
 .section01 .inner .item .text a p {
     font-family: 'semibold';
@@ -287,14 +307,16 @@ video {
 }
 .section02 .inner .text button {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: none;
     background-color: #fec942;
-    font-size: 20px;
     margin-bottom: 15px;
     cursor: pointer;
+    transition: 0.4s;
 }
+
 #section03 {
     top: 100vh;
     position: relative;
@@ -335,26 +357,27 @@ video {
 }
 .section03 .inner .text button {
     margin-top: 35px;
+    transition: 0.4s;
 }
 .section03 .inner .text .more {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: none;
     background-color: #e4242a;
-    font-size: 20px;
     cursor: pointer;
     color: #fff;
     margin-right: 20px;
 }
 .section03 .inner .text .buy {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: 2px solid #e4242a;
     /* background-color: rgba(255, 255, 255, 0.2); */
     background-color: transparent;
-    font-size: 20px;
     cursor: pointer;
     color: #e4242a;
 }
@@ -406,26 +429,27 @@ video {
 }
 .section04 .inner .text button {
     margin-top: 35px;
+    transition: 0.4s;
 }
 .section04 .inner .text .more {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: none;
     background-color: #e4242a;
-    font-size: 20px;
     cursor: pointer;
     color: #fff;
     margin-right: 20px;
 }
 .section04 .inner .text .buy {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: 2px solid #e4242a;
     background-color: rgba(255, 255, 255, 0.7);
     /* background-color: transparent; */
-    font-size: 20px;
     cursor: pointer;
     color: #e4242a;
 }
@@ -478,26 +502,27 @@ video {
 }
 .section05 .inner .text button {
     margin-top: 35px;
+    transition: 0.4s;
 }
 .section05 .inner .text .more {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: none;
     background-color: #e4242a;
-    font-size: 20px;
     cursor: pointer;
     color: #fff;
     margin-right: 20px;
 }
 .section05 .inner .text .buy {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: 2px solid #e4242a;
     background-color: rgba(255, 255, 255, 0.7);
     /* background-color: transparent; */
-    font-size: 20px;
     cursor: pointer;
     color: #e4242a;
 }
@@ -539,26 +564,27 @@ video {
 }
 .section06 .inner .text button {
     margin-top: 35px;
+    transition: 0.4s;
 }
 .section06 .inner .text .more {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: none;
     background-color: #e4242a;
-    font-size: 20px;
     cursor: pointer;
     color: #fff;
     margin-right: 20px;
 }
 .section06 .inner .text .buy {
     font-family: 'semibold';
-    padding: 13px 24px;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 40px;
     border: 2px solid #e4242a;
     background-color: rgba(255, 255, 255, 0.7);
     /* background-color: transparent; */
-    font-size: 20px;
     cursor: pointer;
     color: #e4242a;
 }
@@ -1156,6 +1182,12 @@ input[type="checkbox"]:checked:after {
     }
 }
 @media screen and (max-width: 390px) {
+    .header .inner .util {
+        column-gap: 20px;
+    }
+    .header .mobile_nav button img {
+        width: 26px;
+    }
     .up_btn {
         right: 25px;
     }
